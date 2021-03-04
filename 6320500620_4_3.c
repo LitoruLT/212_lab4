@@ -17,7 +17,7 @@ void main()
     }
 
     i=0;
-    while( ans[i] != NULL)
+    while( ans[i] != '\0')
     {
         printf("%c",ans[i]);
         i++;
