@@ -13,7 +13,9 @@ void main()
 
     for(i=0; term[i]!='\0' ;i++)
     {
-        if(term[i]==' ')
+        printf("term[i] = %c  ",term[i]); /////////////////////////////////////////
+
+        if(term[i]==' ' || term[i]=='\0')
         {
             k=0;
             if( !(strcmp(word,"i") && strcmp(word,"of") && strcmp(word,"the") && strcmp(word,"on") && strcmp(word,"at") && strcmp(word,"for") && strcmp(word,"with") && strcmp(word,"a") && strcmp(word,"in") && strcmp(word,"an") && strcmp(word,"and")) )
@@ -23,6 +25,7 @@ void main()
             else
             {
                 ans[j]=word[0];
+                puts(word);
                 j++;
             }
 
@@ -36,6 +39,7 @@ void main()
         {
             word[k]=toupper(term[i]);
             k++;
+            printf("word[k] = %c  ",word[k]); /////////////////////////////////////////
         }
 
     }
