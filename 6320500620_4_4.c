@@ -1,9 +1,10 @@
 #include<stdio.h>
+#include<string.h>
 
 void main()
 {
-    int n=200,i=0,k=0,j=0,q;
-    char term[n],ans[n],word[5];
+    int n=1000,i=0,k=0,j=0,q;
+    char term[n],ans[n],word[n];
 
     scanf("%[^\n]",term);
 
@@ -12,27 +13,29 @@ void main()
 
     for(i=0; term[i]!='\0' ;i++)
     {
-        if(term[i-1]==' ')
+        if(term[i]==' ')
         {
             k=0;
-            for(q; q<5 ;q++)
-            {
-                word[q]='\0';
-            }
-            if(word == "i" || word == "of" || word == "the" || word == "on" || word == "at" || word == "for" || word == "with" || word == "a" || word == "in" || word == "an" || word == "and")
+            if( !(strcmp(word,"i") && strcmp(word,"of") && strcmp(word,"the") && strcmp(word,"on") && strcmp(word,"at") && strcmp(word,"for") && strcmp(word,"with") && strcmp(word,"a") && strcmp(word,"in") && strcmp(word,"an") && strcmp(word,"and")) )
                 {
 
                 }
             else
             {
-                ans[j]=term[i];
+                ans[j]=word[0];
                 j++;
+            }
+
+            for(q=0; word[q]!='\0' ;q++)
+            {
+                word[q]='\0';
             }
 
         }
         else
         {
-            word[k]=term[i];
+            word[k]=toupper(term[i]);
+            k++;
         }
 
     }
